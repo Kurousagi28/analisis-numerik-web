@@ -169,11 +169,11 @@ Setiap commit mengikuti format konvensi standar agar riwayat perubahan mudah dip
 | Parameter | Data Mahasiswa |
 | :--- | :--- |
 | **Nama Lengkap** | Elfandy Dear Adhani |
-| **NIM** | *(Isi NIM Anda di sini)* |
-| **Kelas / Paralel** | *(Isi Kelas Anda di sini)* |
-| **Program Studi** | *(Isi Program Studi di sini)* |
-| **Mata Kuliah** | Analisis Numerik / Komputasi Numerik |
-| **Dosen Pengampu** | *(Isi Nama Dosen Pengampu di sini)* |
+| **NIM** | 2511016210012 |
+| **Kelas / Paralel** | B |
+| **Program Studi** | S1 Ilmu Komputer |
+| **Mata Kuliah** | Analisis Numerik |
+| **Dosen Pengampu** | Andi Farmadi |
 
 ---
 
