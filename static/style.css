@@ -1,0 +1,312 @@
+/* ==========================================================
+   STYLE CUSTOM - WEB PERHITUNGAN NUMERIK
+   Bersih, Mudah Dibaca, & Responsif
+   ========================================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #475569;
+    --bg-light: #f8fafc;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    
+    /* Warna Sesuai Permintaan Tugas */
+    --table-header-yellow: #fef08a; /* Kuning cerah & bersih untuk header */
+    --table-header-border: #facc15;
+    --col-iterasi-blue: #e0f2fe;    /* Biru muda untuk kolom iterasi */
+    --col-iterasi-border: #bae6fd;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Navbar */
+.navbar-custom {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-custom .nav-link {
+    font-weight: 500;
+    color: #475569;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--primary-color);
+    background-color: #eff6ff;
+}
+
+/* Cards */
+.card-custom {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.card-custom:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-custom {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Math Formula Display Box */
+.formula-badge {
+    background-color: #f1f5f9;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+/* Tabel Khas Lembar Tugas:
+   - Header Kuning
+   - Kolom Iterasi Biru Muda
+*/
+.table-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.table-tugas {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.92rem;
+}
+
+/* Header Kuning */
+.table-tugas thead th {
+    background-color: var(--table-header-yellow) !important;
+    color: #334155 !important;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.75rem 0.85rem;
+    border-bottom: 2px solid var(--table-header-border);
+    border-right: 1px solid #fef3c7;
+    white-space: nowrap;
+}
+
+.table-tugas thead th:last-child {
+    border-right: none;
+}
+
+/* Baris Tabel & Kolom Iterasi Biru Muda */
+.table-tugas tbody td {
+    padding: 0.65rem 0.85rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+    border-right: 1px solid #f8fafc;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.table-tugas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-tugas tbody td:last-child {
+    border-right: none;
+}
+
+/* Kolom Iterasi (Kolom Pertama) Biru Muda */
+.table-tugas thead th:first-child,
+.table-tugas tbody td.col-iterasi,
+.table-tugas tbody td:first-child {
+    background-color: var(--col-iterasi-blue) !important;
+    color: #0369a1 !important;
+    font-weight: 600;
+    text-align: center;
+    border-right: 1px solid var(--col-iterasi-border);
+    width: 60px;
+}
+
+.table-tugas thead th:first-child {
+    background-color: var(--table-header-yellow) !important; /* Header tetap kuning */
+    border-right: 1px solid var(--col-iterasi-border);
+}
+
+.table-tugas tbody tr:hover td {
+    background-color: #f8fafc;
+}
+
+.table-tugas tbody tr:hover td:first-child,
+.table-tugas tbody tr:hover td.col-iterasi {
+    background-color: #bae6fd !important;
+}
+
+/* Baris Akar Terpilih / Highlight */
+.table-tugas tbody tr.row-root td {
+    background-color: #dcfce7 !important;
+    font-weight: bold;
+    color: #166534;
+}
+
+.table-tugas tbody tr.row-root td:first-child {
+    background-color: #bbf7d0 !important;
+}
+
+/* Form Touch Screen Friendly */
+.form-touch-friendly .form-control,
+.form-touch-friendly .form-select {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1.5px solid #cbd5e1;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-touch-friendly .form-control:focus,
+.form-touch-friendly .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-touch-friendly label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #334155;
+    margin-bottom: 0.35rem;
+}
+
+.btn-custom {
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Kotak Kesimpulan Dinamis */
+.conclusion-box {
+    border-radius: 10px;
+    padding: 1.15rem 1.35rem;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.conclusion-box.warning {
+    background-color: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.conclusion-box.info {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.conclusion-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Matplotlib Chart Wrapper */
+.chart-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.chart-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive Customization */
+@media (max-width: 768px) {
+    .table-tugas {
+        font-size: 0.85rem;
+    }
+    
+    .table-tugas thead th,
+    .table-tugas tbody td {
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .card-header-custom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Custom Scrollbar for Horizontal Scroll */
+.table-scroll-container::-webkit-scrollbar {
+    height: 7px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
