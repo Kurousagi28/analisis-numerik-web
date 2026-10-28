@@ -21,6 +21,7 @@ Aplikasi web interaktif komputasi numerik berbasis **Python Flask** untuk menyel
 - [Prasyarat Sistem](#-prasyarat-sistem)
 - [Panduan Instalasi & Menjalankan](#-panduan-instalasi--menjalankan)
 - [Menjalankan Pengujian Otomatis (Testing)](#-menjalankan-pengujian-otomatis-testing)
+- [Standar Git & Pengembangan](#-standar-git--pengembangan)
 - [Informasi Pengembang / Penyusun](#-informasi-pengembang--penyusun)
 - [Lisensi](#-lisensi)
 
@@ -138,6 +139,28 @@ Jalankan perintah berikut di terminal:
 python -m unittest discover tests
 ```
 *Hasil yang diharapkan: `Ran 4 tests in ...s - OK`*
+
+---
+
+## 🌿 Standar Git & Pengembangan
+
+Repository ini menerapkan kaidah rekayasa perangkat lunak dan manajemen versi yang ketat:
+
+### 1. `.gitignore` yang Ketat
+File sensitif (kredensial, kunci privat, `.env`), basis data lokal (`.sqlite`, `.db`), cache lingkungan IDE (`.netbeans/`, `.vscode/`, `.idea/`), dan bytecode Python (`__pycache__/`) tidak diizinkan di-commit ke repositori.
+
+### 2. Pesan Commit Terstruktur (*Conventional Commits*)
+Setiap commit mengikuti format konvensi standar agar riwayat perubahan mudah dipahami:
+- `feat:` penambahan fitur atau algoritma baru (contoh: `feat: tambah metode regula falsi`)
+- `fix:` perbaikan bug atau kalkulasi (contoh: `fix: perbaiki penanganan pembagian nol pada secant`)
+- `docs:` pembaruan dokumentasi (contoh: `docs: perbarui panduan instalasi di README`)
+- `chore:` pemeliharaan konfigurasi atau dependensi (contoh: `chore: perketat aturan gitignore`)
+- `test:` penambahan atau pembaruan unit testing (contoh: `test: tambah pengujian validasi input biseksi`)
+
+### 3. Manajemen Percabangan (*Branching Strategy*)
+- **`main`**: Khusus untuk kode stabil, teruji, dan rilis final. Tidak diperkenankan melakukan *direct push* saat penambahan fitur baru.
+- **`feature/<nama-fitur>`**: Branch spesifik untuk pengembangan fitur baru.
+- **`bugfix/<nama-perbaikan>`**: Branch spesifik untuk perbaikan masalah teknis.
 
 ---
 
